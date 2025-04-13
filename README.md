@@ -28,7 +28,10 @@ Projet réalisé pour s'entraîner à la programmation orientée objet (POO), la
 
 ```bash
 # Compilation
-javac Main.java
+javac src/*.java
+
 
 # Exécution
 java Main
+ou
+java -cp src Main
