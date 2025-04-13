@@ -1,15 +1,19 @@
+package library;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+
+
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         System.out.printf("Hello and welcome!");
         Library listOfBooks = new Library();
+        String fileName = "books.txt";
+        listOfBooks.loadFromFile(fileName);
         listOfBooks.addBook("love", "samira");
         listOfBooks.addBook("bonheur", "nono");
         System.out.println(listOfBooks.getBooks());
@@ -50,6 +54,9 @@ public class Main {
                     break;
                 case 0:
                     System.out.println("A bientot");
+                    listOfBooks.saveToFile(fileName);
+                    System.out.println("💾 Données sauvegardées. À bientôt !");
+
                     return;
                 default:
                     System.out.println("Choix invalid");
